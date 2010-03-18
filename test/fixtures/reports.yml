@@ -1,0 +1,9 @@
+one:
+  name: MyString
+  query: MyString
+  database_id: 1
+
+two:
+  name: MyString
+  query: MyString
+  database_id: 1
