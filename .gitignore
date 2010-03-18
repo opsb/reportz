@@ -1,0 +1,7 @@
+log/*.log
+db/*.sqlite3
+*~
+coverage.features
+coverage.tests
+tmp
+db/*.sqlite3-journal
