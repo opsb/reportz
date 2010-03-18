@@ -1,0 +1,23 @@
+<% title "Databases" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Hostname</th>
+  </tr>
+  <% for database in @databases %>
+    <tr>
+      <td><%=h database.name %></td>
+      <td><%=h database.username %></td>
+      <td><%=h database.password %></td>
+      <td><%=h database.hostname %></td>
+      <td><%= link_to "Show", database %></td>
+      <td><%= link_to "Edit", edit_database_path(database) %></td>
+      <td><%= link_to "Destroy", database, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Database", new_database_path %></p>

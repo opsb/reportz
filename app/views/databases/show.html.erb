@@ -1,0 +1,24 @@
+<% title "Database" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @database.name %>
+</p>
+<p>
+  <strong>Username:</strong>
+  <%=h @database.username %>
+</p>
+<p>
+  <strong>Password:</strong>
+  <%=h @database.password %>
+</p>
+<p>
+  <strong>Hostname:</strong>
+  <%=h @database.hostname %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_database_path(@database) %> |
+  <%= link_to "Destroy", @database, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", databases_path %>
+</p>
