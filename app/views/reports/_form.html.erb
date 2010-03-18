@@ -1,4 +1,4 @@
-<% form_for @report do |f| %>
+<% form_for [@database, @report] do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :name %><br />
@@ -7,10 +7,6 @@
   <p>
     <%= f.label :query %><br />
     <%= f.text_field :query %>
-  </p>
-  <p>
-    <%= f.label :database_id %><br />
-    <%= f.text_field :database_id %>
   </p>
   <p><%= f.submit "Submit" %></p>
 <% end %>

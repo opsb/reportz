@@ -1,4 +1,10 @@
 class ReportsController < ApplicationController
+  before_filter :load_database, :only => [:index, :new, :create]
+
+  def load_database
+    @database = Database.find(params[:database_id])
+  end
+
   def index
     @reports = Report.all
   end
@@ -13,6 +19,7 @@ class ReportsController < ApplicationController
   
   def create
     @report = Report.new(params[:report])
+    @report.database = @database
     if @report.save
       flash[:notice] = "Successfully created report."
       redirect_to @report

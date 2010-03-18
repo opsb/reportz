@@ -1,7 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :reports
 
-  map.resources :databases
+  map.resources :databases do |database|
+    database.resources :reports, :shallow => true
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
 
