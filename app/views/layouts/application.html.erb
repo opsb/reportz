@@ -8,6 +8,9 @@
   </head>
   <body>
     <div id="container">
+      <ul class="nav">
+        <li><%= link_to 'Databases', databases_path %></li>
+      </ul>
       <%- flash.each do |name, msg| -%>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <%- end -%>

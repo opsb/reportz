@@ -8,7 +8,7 @@
 <p>
   <%= link_to "Edit", edit_report_path(@report) %> |
   <%= link_to "Remove", @report, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "#{@report.database.name} reports", database_reports_path(@report.database) %>
+  <%= link_to "#{@report.database.name} reports", database_path(@report.database) %>
 </p>
 
 <table>
