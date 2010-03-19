@@ -13,6 +13,26 @@
   <%=h @report.database_id %>
 </p>
 
+<table>
+<thead>
+  <% @column_names.each do |column_name| %>
+  <th>
+    <%= column_name  %>
+  </th>
+  <% end %>
+</thead>
+<tbody>
+<% @result.each do |row| %>
+  <tr>
+  <% row.each_with_name do |value, column_name| %>
+    <td><%= value %></td>
+  <% end %>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+
 <p>
   <%= link_to "Edit", edit_report_path(@report) %> |
   <%= link_to "Destroy", @report, :confirm => 'Are you sure?', :method => :delete %> |

@@ -1,5 +1,4 @@
 require 'dbi'
-require 'mysql'
 
 class ReportsController < ApplicationController
   before_filter :load_database, :only => [:index, :new, :create]
@@ -15,8 +14,11 @@ class ReportsController < ApplicationController
   def show
     @report = Report.find(params[:id])
     @database = @report.database
-    @conn = DBI.connect("DBI:Mysql:#{@database.schema}:#{@database.hostname}", @database.username, @database.password)
-    @result = @conn.select_all(@report.query);
+    @dbh = DBI.connect("DBI:Mysql:#{@database.schema}:#{@database.hostname}", @database.username, @database.password)
+    @sth = @dbh.prepare(@report.query)
+    @sth.execute
+    @column_names = @sth.column_names
+    @result = @sth.fetch_all
   end
   
   def new
