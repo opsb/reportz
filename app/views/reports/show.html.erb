@@ -1,5 +1,5 @@
 <% title @report.name, false %>
-<h1 class="with_details"><%= @report.name %></h1><%= link_to "Edit", edit_report_path(@report) %>
+<h1 class="with_details"><%= @report.name %></h1><%= link_to "edit", edit_report_path(@report) %>
 <p>
   <strong>Query:</strong>
   <%=h @report.query %>
