@@ -54,6 +54,6 @@ class ReportsController < ApplicationController
     @report = Report.find(params[:id])
     @report.destroy
     flash[:notice] = "Successfully destroyed report."
-    redirect_to reports_url
+    redirect_to database_url(@report.database)
   end
 end
