@@ -1,14 +1,5 @@
-<% title @database.name %>
-<p>
-  <strong>Hostname:</strong>
-  <%=h @database.hostname %>
-</p>
-<p>
-  <strong>Schema:</strong>
-  <%=h @database.schema %>
-</p>
-
-<h2>Reports</h2>
+<% title @database.name, false %>
+<h1 class="with_details"><%= @database.name %></h1>(<%=h @database.hostname %>/<%=h @database.schema %>)
 
 <table>
   <% for report in @database.reports %>

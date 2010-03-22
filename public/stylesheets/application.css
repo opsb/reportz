@@ -84,7 +84,25 @@ a {
   list-style:none;
   padding:0;
   margin:0;
-  float:right;
+  width:100%;
+  border-bottom:1px solid  black;
+}
+
+.nav li {
+  display:inline;
+}
+
+.nav li:before {
+  content:' > '
+}
+
+.nav li.first:before {
+  content:'';
+}
+
+h1.with_details {
+  display:inline-block;
+  padding:0px 10px 0px 0px;
 }
 
 a {

@@ -9,7 +9,10 @@
   <body>
     <div id="container">
       <ul class="nav">
-        <li><%= link_to 'Databases', databases_path %></li>
+        <li class="first"><%= link_to 'Databases', databases_path %></li>
+        <% if @database %>
+        <li><%= link_to @database.name, @database %></li>
+        <% end %>
       </ul>
       <%- flash.each do |name, msg| -%>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
